@@ -2,13 +2,14 @@
 MCP types for the Markdown manager server.
 """
 
-from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
+from typing import Any, Dict
 
 
 @dataclass
 class TextContent:
     """Text content for MCP responses."""
+
     type: str = "text"
     text: str = ""
 
@@ -16,13 +17,14 @@ class TextContent:
 @dataclass
 class Tool:
     """Tool definition for MCP server."""
+
     name: str
     description: str
-    inputSchema: Dict[str, Any]
+    inputSchema: Dict[str, Any]  # noqa: N815
 
 
-class types:
+class types:  # noqa: N801
     """MCP types namespace."""
-    
+
     TextContent = TextContent
-    Tool = Tool 
+    Tool = Tool
