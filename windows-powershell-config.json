@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "servers": {
+      "markdown-manager": {
+        "command": "powershell",
+        "args": ["-Command", ".venv\\Scripts\\Activate.ps1; python -m src.server"],
+        "cwd": "C:\\Users\\username\\Desktop\\git\\mcp_python"
+      }
+    }
+  }
+} 

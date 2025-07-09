@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "servers": {
+      "markdown-manager": {
+        "command": "cmd",
+        "args": ["/c", ".venv\\Scripts\\activate && python -m src.server"],
+        "cwd": "C:\\Users\\username\\Desktop\\git\\mcp_python"
+      }
+    }
+  }
+} 

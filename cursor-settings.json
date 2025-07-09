@@ -2,14 +2,14 @@
   "mcp": {
     "servers": {
       "markdown-manager": {
-        "command": "python",
-        "args": ["-m", "src.server"],
-        "cwd": "/Users/gukho/Desktop/git/mcp_python",
-        "env": {
-          "MARKDOWN_MCP_BASE_PATH": "/Users/gukho/Desktop/git/mcp_python/docs",
-          "LOG_LEVEL": "INFO"
-        }
+        "command": "bash",
+        "args": ["-c", "source .venv/bin/activate && python -m src.server"],
+        "cwd": "/Users/gukho/Desktop/git/mcp_python"
       }
     }
+  },
+  "editor": {
+    "formatOnSave": true,
+    "tabSize": 2
   }
 } 

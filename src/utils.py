@@ -179,4 +179,44 @@ def get_file_info(file_path: str) -> Dict:
         }
     except Exception as e:
         logger.error(f"Failed to get file info: {e}")
-        return {"error": str(e)} 
+        return {"error": str(e)}
+
+
+def sanitize_filename(filename: str) -> str:
+    """
+    Sanitize a filename to make it safe for file system operations.
+    
+    Args:
+        filename: The filename to sanitize
+        
+    Returns:
+        Sanitized filename
+    """
+    # Remove or replace unsafe characters
+    unsafe_chars = ['<', '>', ':', '"', '|', '?', '*', '\\', '/']
+    sanitized = filename
+    
+    for char in unsafe_chars:
+        sanitized = sanitized.replace(char, '_')
+    
+    # Remove leading/trailing spaces and dots
+    sanitized = sanitized.strip(' .')
+    
+    # Ensure filename is not empty
+    if not sanitized:
+        sanitized = "untitled"
+    
+    return sanitized
+
+
+def parse_frontmatter(content: str) -> Tuple[Optional[Dict], str]:
+    """
+    Parse YAML frontmatter from content (alias for extract_frontmatter).
+    
+    Args:
+        content: The content to parse
+        
+    Returns:
+        Tuple of (frontmatter_dict, content_without_frontmatter)
+    """
+    return extract_frontmatter(content) 
